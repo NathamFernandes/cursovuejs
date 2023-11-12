@@ -15,10 +15,15 @@
       <div class="product-display">
         <div class="product-container">
           <div class="product-image">
-            <img v-bind:src="image">
+            <img v-bind:src="imagem">
           </div>
           <div class="product-info">
-            <h1>{{ product }}</h1>
+            <h1>{{ produto }}</h1>
+            <p>{{ descricao }}</p>
+            <a :href="url">URL do meu site!</a>
+            <p v-if="quantidade > 10 && estaAVenda">Produto em estoque!</p>
+            <p v-else-if="(quantidade <= 10 && quantidade > 0) && estaAVenda">Produto quase acabando!</p>
+            <p v-else>Produto fora de estoque! :(</p>
           </div>
         </div>
       </div>
